@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2010 QINUAU.
+ */
+
+#ifndef _QINUCONTROLLER_H
+#define _QINUCONTROLLER_H 1
+
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include "QinuBase64.h"
+#include "QinuCharEntRef.h"
+#include "QinuHttpClient.h"
+#include "QinuNumCharRef.h"
+#include "QinuPcre.h"
+#include "QinuSmtpClient.h"
+#include "QinuSocket.h"
+#include "QinuString.h"
+#include "QinuEnvironment"
+
+namespace Qinu 
+{
+    class Controller 
+    {   
+        public:
+            class Environment *qinu;
+            Controller(struct struct_plugin_args plugin_args);
+            ~Controller();
+            std::map <std::string, void (Qinu::Controller::*) ()> dispatch;
+            void con();
+            void foo();
+        private:
+      
+    };
+}
+
+#endif

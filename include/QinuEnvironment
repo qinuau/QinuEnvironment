@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2010 QINUAU.
+ */
+
+#ifndef _QINUENVIRONMENT_H
+#define _QINUENVIRONMENT_H 1
+
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include "QinuBase64.h"
+#include "QinuCharEntRef.h"
+#include "QinuHttpClient.h"
+#include "QinuNumCharRef.h"
+#include "QinuPcre.h"
+#include "QinuSmtpClient.h"
+#include "QinuSocket.h"
+#include "QinuString.h"
+#include "QinuView"
+#include "QinuModel"
+#include "QinuController"
+
+namespace Qinu 
+{
+    const int SIZE_POINTER_ARRAY = 1024000;
+
+    struct struct_plugin_args {
+        class Environment *qinu;
+    };
+
+    class Environment 
+    {   
+        public:
+	    std::string action;
+            std::map <std::string, std::string> path_info_ary;
+            Environment();
+            ~Environment();
+            class View *view;
+            class Model *model;
+            class Controller *controller;
+
+            // for plugin
+            // class PluginClass *class_member_plugin_name;
+        private:
+            void Environment::assign_library();
+    };
+}
+
+#endif

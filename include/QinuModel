@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2010 QINUAU.
+ */
+
+#ifndef _QINUMODEL_H
+#define _QINUMODEL_H 1
+
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include "QinuBase64.h"
+#include "QinuCharEntRef.h"
+#include "QinuHttpClient.h"
+#include "QinuNumCharRef.h"
+#include "QinuPcre.h"
+#include "QinuSmtpClient.h"
+#include "QinuSocket.h"
+#include "QinuString.h"
+#include "QinuEnvironment"
+
+namespace Qinu 
+{
+    class Model 
+    {   
+        public:
+            class Environment *qinu;
+            Model(struct struct_plugin_args plugin_args);
+            ~Model();
+        private:
+      
+    };
+}
+
+#endif

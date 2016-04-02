@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2010 QINUAU.
+ */
+
+#ifndef _QINUVIEW_H
+#define _QINUVIEW_H 1
+
+#include <cstdlib>
+#include <iostream>
+#include <map>
+#include <string>
+#include "QinuBase64.h"
+#include "QinuCharEntRef.h"
+#include "QinuHttpClient.h"
+#include "QinuNumCharRef.h"
+#include "QinuPcre.h"
+#include "QinuSmtpClient.h"
+#include "QinuSocket.h"
+#include "QinuString.h"
+#include "QinuEnvironment"
+
+namespace Qinu 
+{
+    class View
+    {   
+        public:
+            class Environment *qinu;
+            View(struct struct_plugin_args plugin_args);
+            ~View();
+            void process(std::map <std::string,std::string> args);
+        private:
+      
+    };
+}
+
+#endif
